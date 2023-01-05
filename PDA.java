@@ -11,6 +11,7 @@ public class PDA
 {
     int age;
     int LOWER_BOUND = 0;
+    boolean shouldContinue = true;
     /**
      * Constructor for objects of class PDA
      */
@@ -24,22 +25,30 @@ public class PDA
      */
     public void runEventLoop() {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
+        while (shouldContinue) {
             System.out.println("How old are you?");
+            System.out.println("Type 0 to quit");
             try {
                 age = scanner.nextInt();
                 if (age < LOWER_BOUND) {
                     System.out.println(age + " is too young!!");
+                } else if (age == 0) {
+                    shouldContinue = false;
                 } else {
-                    System.out.print("Minimum: " + (age/2 + 7));
-                    System.out.print("Maximum: " + (age/2 - 7));
+                    System.out.println("Minimum: " + (age/2 + 7));
+                    System.out.println("Maximum: " + (age/2 - 7));
                 }
             } catch (InputMismatchException error) {
                 System.out.println("Please enter an integer");
             }
         }
     }
-
+    public void getYoungerAge(int age){
+        System.out.println("Minimum: " + (age/2 + 7));
+    }
+    public void getOlderAge(int age) {
+        System.out.println("Maximum: " + (age/2 - 7));
+    }
     /**
      * The main method instantiates and runs the program
      */
