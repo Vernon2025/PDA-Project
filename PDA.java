@@ -33,10 +33,11 @@ public class PDA
                 if (age < LOWER_BOUND) {
                     System.out.println(age + " is too young!!");
                 } else if (age == 0) {
+                    System.out.println("This program closed");
                     shouldContinue = false;
                 } else {
-                    System.out.println("Minimum: " + (age/2 + 7));
-                    System.out.println("Maximum: " + (age/2 - 7));
+                    System.out.println("Minimum Age: " + (age/2 + 7));
+                    System.out.println("Maximum Age: " + (age/2 - 7));
                 }
             } catch (InputMismatchException error) {
                 System.out.println("Please enter an integer");
@@ -44,10 +45,10 @@ public class PDA
         }
     }
     public void getYoungerAge(int age){
-        System.out.println("Minimum: " + (age/2 + 7));
+        System.out.println("Minimum Age: " + (age/2 + 7));
     }
     public void getOlderAge(int age) {
-        System.out.println("Maximum: " + (age/2 - 7));
+        System.out.println("Maximum Age: " + (age/2 - 7));
     }
     /**
      * The main method instantiates and runs the program
