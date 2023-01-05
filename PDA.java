@@ -10,7 +10,7 @@ import java.util.InputMismatchException;
 public class PDA
 {
     int age;
-    int LOWER_BOUND = 0;
+    int LOWER_BOUND = 14;
     boolean shouldContinue = true;
     /**
      * Constructor for objects of class PDA
@@ -32,23 +32,25 @@ public class PDA
                 age = scanner.nextInt();
                 if (age < LOWER_BOUND) {
                     System.out.println(age + " is too young!!");
-                } else if (age == 0) {
-                    System.out.println("This program closed");
-                    shouldContinue = false;
                 } else {
-                    System.out.println("Minimum Age: " + (age/2 + 7));
-                    System.out.println("Maximum Age: " + (age/2 - 7));
+                    System.out.println("Oldest: " + (age/2 + 7));
+                    System.out.println("Youngest: " + (age/2 - 7));
                 }
             } catch (InputMismatchException error) {
                 System.out.println("Please enter an integer");
+                scanner.next();
+            }
+            if (age == 0) {
+                shouldContinue = false;
+                System.out.println("This program closed");
             }
         }
     }
     public void getYoungerAge(int age){
-        System.out.println("Minimum Age: " + (age/2 + 7));
+        System.out.println("Minimum Age: ");
     }
     public void getOlderAge(int age) {
-        System.out.println("Maximum Age: " + (age/2 - 7));
+        System.out.println("Maximum Age: " );
     }
     /**
      * The main method instantiates and runs the program
