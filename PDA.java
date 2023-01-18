@@ -9,7 +9,8 @@ import java.util.InputMismatchException;
 public class PDA {
     int age;
     int LOWER_BOUND = 14;
-    static boolean shouldContinue = true;
+    boolean shouldContinue = true;
+    boolean on;
     /**
      * Constructor for objects of class PDA
      */
@@ -24,10 +25,12 @@ public class PDA {
         Scanner scanner = new Scanner(System.in);
         while (shouldContinue) {
             System.out.println("How old are you?");
-            System.out.println("Enter age as 0 to quit");
+            System.out.println("Enter 0 to quit");
             try {
                 age = scanner.nextInt();
-                if (age < LOWER_BOUND) {
+                if (age == 0) {
+                    shouldContinue = false;
+                } else if (age < LOWER_BOUND) {
                     System.out.println(age + " is too young!!");
                 } else {
                     getYoungerAndOlderAge(age);
@@ -35,9 +38,6 @@ public class PDA {
             } catch (InputMismatchException error) {
                 scanner.next();
                 System.out.println("Please enter an integer");
-            }
-            if (age == 0) {
-                shouldContinue = false;
             }
         }
     }
