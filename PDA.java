@@ -10,7 +10,6 @@ public class PDA {
     int age;
     int LOWER_BOUND = 14;
     boolean shouldContinue = true;
-    boolean on;
     /**
      * Constructor for objects of class PDA
      */
@@ -43,7 +42,7 @@ public class PDA {
     }
     public static void getYoungerAndOlderAge (int age) {
         System.out.println("The minimun age is " + ((age/2) + 7));
-        System.out.println("The maximum age is " + ((age*2) - 7));
+        System.out.println("The maximum age is " + ((age*2) - 7)); 
     }
     public static void main (String[] args) {
         PDA pda = new PDA();
